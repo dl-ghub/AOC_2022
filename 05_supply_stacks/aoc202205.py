@@ -16,7 +16,6 @@ def part1(data):
     # for line in data:
 
     stacks = data[0].split()
-    print(stacks)
 
     for line in data[1:]:
         moves = [int(i) for i in line.split() if i.isdigit()]  # [Quantity, From Stack, To Stack]
@@ -40,7 +39,6 @@ def part2(data):
     """Find out the sequence of blocks at the top of each stack after all moves are completed (moves are not completed one by one but all at once)"""
     
     stacks = data[0].split()
-    print(stacks)
 
     for line in data[1:]:
         moves = [int(i) for i in line.split() if i.isdigit()]  # [Quantity, From Stack, To Stack]
@@ -50,7 +48,7 @@ def part2(data):
 
         # remove characters (moves[0]) from string at index moves[1]
         stacks[(moves[1]-1)] = (stacks[(moves[1]-1)])[:-moves[0]]
-        
+
     ans = ""
 
     for stack in stacks:
